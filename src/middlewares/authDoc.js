@@ -13,7 +13,7 @@ async function authDocProducao(req, res, next) {
 
     if(senhaDigitada){
         // Usuario digitou a senha errada
-        res.status(401).set('Content-Type', 'text/html');
+        res.status(401).set('Content-Type', 'text/css');
         res.send(Buffer.from(`
             <form method="post">
                 <p style="color: red;">Senha incorreta!</p>
@@ -24,7 +24,7 @@ async function authDocProducao(req, res, next) {
         `))
     } else{
         // Usuario ainda não digitou a senha e está em modo produção
-        res.status(200).set('Content-Type', 'text/html');
+        res.status(200).set('Content-Type', 'text/css');
         res.send(Buffer.from(`
             <form method="post">
                 <label for="senhaDigitada">Senha da documentação:</label>
