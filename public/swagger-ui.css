@@ -145,7 +145,8 @@
 .swagger-ui [type=submit],
 .swagger-ui button,
 .swagger-ui html [type=button] {
-	-webkit-appearance: button
+	-webkit-appearance:button;
+	appearance: button;
 }
 
 .swagger-ui [type=button]::-moz-focus-inner,
@@ -198,6 +199,7 @@
 
 .swagger-ui [type=search] {
 	-webkit-appearance: textfield;
+	appearance: textfield;
 	outline-offset: -2px
 }
 
@@ -3382,7 +3384,9 @@
 
 .swagger-ui .input-reset {
 	-webkit-appearance: none;
-	-moz-appearance: none
+	appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .swagger-ui .button-reset::-moz-focus-inner,
