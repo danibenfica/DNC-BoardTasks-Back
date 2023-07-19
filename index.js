@@ -17,10 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/swagger-ui.css', express.static(path.join(__dirname, 'public', 'swagger-ui.css')));
+
 if(process.env.NODE_ENV !== 'test'){
     const swaggerFile = require('./swagger/swagger_output.json');
     app.get('/', (req, res) => { /* #swagger.ignore = true */ res.redirect('/doc'); });
-
 
     app.use('/doc', authDocProducao, swaggerUi.serve, swaggerUi.setup(swaggerFile, {
       customCss: '.swagger-ui .topbar { display: none }',
