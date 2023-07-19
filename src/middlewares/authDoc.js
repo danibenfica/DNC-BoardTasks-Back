@@ -7,16 +7,16 @@ async function authDocProducao(req, res, next) {
     }
 
     if(senhaDigitada === process.env.SWAGGER_SENHA_DOC){
-        // Usuario digitou a senha certa
+        // Usuario digitou a senha corretamente
         return next();
     }
 
     if(senhaDigitada){
-        // Usuario digitou a senha errada
+        // Usuario digitou a senha incorreta
         res.status(401).set('Content-Type', 'text/html');
         res.send(Buffer.from(`
             <form method="post">
-                <p style="color: red;">Senha incorreta!</p>
+                <p style="color: red;">Senha inválida!</p>
                 <label for="senhaDigitada">Senha da documentação:</label>
                 <input type="password" name="senhaDigitada" id="senhaDigitada" />
                 <button type="submit">Entrar</button>
