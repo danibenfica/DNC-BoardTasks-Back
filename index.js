@@ -18,9 +18,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/swagger-ui.css', express.static(path.join(__dirname, 'public', 'swagger-ui.css')));
+app.use('/swagger-ui', express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist')));
 
-if(process.env.NODE_ENV !== 'test'){
+if (process.env.NODE_ENV !== 'test') {
     const swaggerFile = require('./swagger/swagger_output.json');
     app.get('/', (req, res) => { /* #swagger.ignore = true */ res.redirect('/doc'); });
 
