@@ -31,5 +31,5 @@ const esquema =  new mongoose.Schema({
 
 );
 
-const EsquemaUsuario = mongoose.models.Usuario || mongoose.model('Usuário', esquema);
+const EsquemaUsuario = mongoose.models.Usuario || mongoose.model('Usuario', esquema);
 module.exports = EsquemaUsuario;
